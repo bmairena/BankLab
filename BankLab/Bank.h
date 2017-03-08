@@ -17,5 +17,8 @@ public:
 	void createAccount(Account newAccount);
 	std::string showAccounts();
 	
+	std::string listAccount();
+	void Deposit(int accountNumber, int amount);
+	void Withdraw(int accountNumber, int amount);
 };
 
