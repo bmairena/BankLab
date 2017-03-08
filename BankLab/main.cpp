@@ -82,6 +82,7 @@ void transactionMenu()
 	cout << "How many pennies>";
 	int pennies;
 	cin >> pennies;
+	
 
 	switch (transactionType)
 	{
@@ -89,6 +90,8 @@ void transactionMenu()
 	case 2: bank.Withdraw(chosenAccount, pennies); break;
 	default: break;
 	}
+	
+	
 
 }
 
