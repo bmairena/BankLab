@@ -13,3 +13,8 @@ std::string Bank::getName()
 {
 	return _name;
 }
+
+void Bank::createAccount(Account newAccount)
+{
+	_accounts.push_back(newAccount);
+}
