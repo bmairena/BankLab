@@ -2,7 +2,6 @@
 #include<vector>
 #include<string>
 #include "Account.h"
-//changes
 class Bank
 {
 private:
@@ -14,11 +13,9 @@ public:
 	~Bank();
 
 	std::string getName();
-	void createAccount(Account newAccount);
 	std::string showAccounts();
+	std::vector<Account> GetAccounts();
+	bool OpenAccount(Account account, int startingPennies);
 	
-	std::string listAccount();
-	void Deposit(int accountNumber, int amount);
-	void Withdraw(int accountNumber, int amount);
-};
+}; 
 

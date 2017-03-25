@@ -1,8 +1,9 @@
 #include "Bank.h"
+#include <iostream>
 
 Bank::Bank(std::string name) : _name(name)
 {
-	//comment
+
 }
 
 Bank::~Bank()
@@ -14,49 +15,27 @@ std::string Bank::getName()
 	return _name;
 }
 
-void Bank::createAccount(Account newAccount)
-{
-	_accounts.push_back(newAccount);
-}
-
 std::string Bank::showAccounts()
 {
-	
-		std::string output = "Accounts for " + _name + "\n";
-		for (auto account : _accounts)
-		{
-			output += std::to_string(account.getAccountNumber()) += "\n";
-		}
-		return output;
-}
-
-std::string Bank::listAccount()
-{
-	std::string output = "Accounts for " + _name + "\n";
-	int index = 0;
+	std::string output = "Accounts for " + _name;
 	for (auto account : _accounts)
 	{
-		output += std:: to_string(index) + ") " += std::to_string(account.getAccountNumber()) += "\n";
-		index++;
+		output += std::to_string(account.getAccountNumber()) += "\n";
 	}
 	return output;
 }
 
-void Bank::Deposit(int accountNumber, int amount)
+
+std::vector<Account> Bank::GetAccounts()
 {
-	for (Account account : _accounts){
-		if (account.getAccountNumber() == accountNumber) {
-			account.Deposit(amount);
-		}
+	return _accounts;
 }
 
-}
 
-void Bank::Withdraw(int accountNumber, int amount)
+
+bool Bank::OpenAccount(Account account, int startingPennies)
 {
-	for (Account account : _accounts) {
-		if (account.getAccountNumber() == accountNumber) {
-			account.Withdraw(amount);
-		}
-	}
+	account.Deposit(startingPennies);
+	_accounts.push_back(account);
+	return true;
 }

@@ -4,6 +4,7 @@
 class Customer
 {
 private:
+	int _id;
 	std::string _firstName;
 	std::string _lastName;
 public:	
